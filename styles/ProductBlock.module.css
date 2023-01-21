@@ -1,0 +1,59 @@
+.productBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 396px;
+    height: 560px;
+    left: 0.15px;
+    top: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.productImage {
+    width: 75%;
+    object-fit: cover;
+    padding: 20px;
+}
+
+.productBlock p {
+    font-weight: 600;
+}
+
+.productBlock h3 {}
+
+.productButtonDetails {
+    width: 214px;
+    height: 53px;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #1F204D;
+    border-radius: 8px;
+    background-color: white;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+.productBasket {
+    width: 51px;
+    height: 53px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+}
+
+.basket {
+    width: 70%;
+    padding: 0;
+}
