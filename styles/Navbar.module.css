@@ -5,18 +5,18 @@
   padding: 10px;
   width: 80%;
   margin: 0 auto;
+  z-index: 999;
 }
 
+/* Поиск */
 .left {
   display: flex;
   align-items: center;
 }
-
 .menuIcon {
   cursor: pointer;
   padding: 0 10px;
 }
-
 .searchInput {
   background-color: #fff;
   color: #000;
@@ -24,13 +24,52 @@
   padding: 10px;
   margin-left: 10px;
 }
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 20px;
+  border-radius: 28px;
+}
+.searchInput {
+  font-size: 14px;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.searchIcon {
+  cursor: pointer;
+}
+.searchBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #152948c8;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  }
+  
+  and .searchContainer {
+  position: relative;
+  z-index: 1;
+  }
 
+/* Логотип */
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
   margin-left: 7%;
+  cursor: pointer;
 }
 
 .siteName {
@@ -45,11 +84,40 @@
   padding: 0 10px;
 }
 
+/* Открытое меню */
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #152948c8;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menuOverlay a {
+  color: white;
+  font-size: 2.3rem;
+  text-decoration: none;
+}
+
+.menuItem {
+  margin: 1.5rem 0;
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+
+
+/* Иконки справа */
 .right {
   display: flex;
   align-items: center;
 }
-
+/* Изменение языка */
 .language {
   padding: 0 10px;
 }
@@ -64,6 +132,45 @@
 .icons {
   padding: 0 10px;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  background-color: #000;
+  color: #fff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.menu ul {
+  list-style-type: none;
+}
+
+.menu li {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
 
 /* Media Queries */
 @media (max-width: 600px) {

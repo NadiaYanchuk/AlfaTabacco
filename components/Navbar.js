@@ -6,25 +6,40 @@ import React, { useState } from "react";
 const Navbar = () => {
   const [searchInput, setSearchInput] = useState(false);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className={styles.menuContainer}>
+
+      {/* Поиск */}
       <div className={styles.left}>
         <div
           className={styles.menuIcon}
           onClick={() => setSearchInput(!searchInput)}
         >
-          <Image src="/search.svg" width={30} height={30} alt="search" />
+          {searchInput ? (
+            <div className={styles.searchContainer}>
+              <div className={styles.searchBackground}></div>
+              <Image src="/search2.svg" width={30} height={30} alt="search" />
+              <input
+                type="text"
+                placeholder="Search"
+                className={styles.searchInput}
+                autoFocus={searchInput}
+              />
+            </div>
+          ) : (
+            <Image src="/search.svg" width={30} height={30} alt="search" />
+          )}
         </div>
-        {searchInput && (
-          <input
-            type="text"
-            placeholder="Search"
-            className={styles.searchInput}
-          />
-        )}
       </div>
 
-      <div className={styles.center}>
+      {/* Логотип */}
+      <div className={styles.center} onClick={handleMenuClick}>
         <div className={styles.siteName}>
           ALPHA{" "}
           <div className={styles.siteIcon}>
@@ -33,7 +48,26 @@ const Navbar = () => {
           TABACCO
         </div>
       </div>
-
+      {/* Открытое меню */}
+      {menuOpen && (
+        <div className={styles.menuOverlay}>
+          <div className={styles.menuContent}>
+            <a href="/a">
+              <div className={styles.menuItem}>Кальяны</div>
+            </a>
+            <a href="/a">
+              <div className={styles.menuItem}>Сигареты</div>
+            </a>
+            <a href="/a">
+              <div className={styles.menuItem}>Табак</div>
+            </a>
+            <a href="/a">
+              <div className={styles.menuItem}>Самокрутки</div>
+            </a>
+          </div>
+        </div>
+      )}
+      {/* Изменение языка */}
       <div className={styles.right}>
         <div className={styles.language}>
           <Image src="/language.svg" width={30} height={30} alt="Search" />
@@ -46,12 +80,7 @@ const Navbar = () => {
         </a>
         <a href="/shopcart/products">
           <div className={styles.icons}>
-            <Image
-              src="/my-basket.svg"
-              width={25}
-              height={25}
-              alt="Shopcart"
-            />
+            <Image src="/my-basket.svg" width={25} height={25} alt="Shopcart" />
           </div>
         </a>
       </div>
