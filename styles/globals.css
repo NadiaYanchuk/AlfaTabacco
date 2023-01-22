@@ -4,20 +4,12 @@ body {
   margin: 0;
 }
 
-
 body {
   font-family: 'Montserrat', sans-serif;
   background: #000235;
   color: #fff;
   font-size: 20px;
 }
-
-#__next {
-  min-height: 100vh;
-  display: grid;
-  grid-auto-rows: auto 1fr auto;
-}
-
 
 header,
 footer {
@@ -29,25 +21,11 @@ header {
   position: fixed;
   background-image: linear-gradient(
     to bottom,
-    rgb(11, 22, 30),
-    rgba(219, 218, 218, 0.1)
+    rgb(12, 24, 32),
+    rgba(18, 30, 40, 0.074)
   );
   display: flex;
   align-items: center;
   padding: 0 20px;
   z-index: 1;
-}
-
-footer {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.5)
-  );
-  text-align: center;
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
 }

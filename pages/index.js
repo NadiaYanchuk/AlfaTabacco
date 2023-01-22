@@ -89,6 +89,7 @@ const Home = () => (
         <img className={styles.Next} src="/arrow.svg" alt="Next" />
       </div>
       {/*  */}
+      
     </div>
   </div>
 );
