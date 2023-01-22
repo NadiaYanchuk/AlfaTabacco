@@ -1,29 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import ProductBlock from "../components/ProductBlock";
-const products = [
-  {
-    id: 1,
-    image: "/product.png",
-    name: "Product 1",
-    description: "Lorem ipsum dolor sit amet",
-    price: "$10",
-  },
-  {
-    id: 2,
-    image: "/product.png",
-    name: "Product 2",
-    description: "Lorem ipsum dolor sit amet",
-    price: "$20",
-  },
-  {
-    id: 3,
-    image: "/product.png",
-    name: "Product 3",
-    description: "Lorem ipsum dolor sit amet",
-    price: "$30",
-  },
-];
+import ProductSlider from "../components/ProductSlider";
 
 const Home = () => (
   <div className={styles.wrapper}>
@@ -70,26 +47,12 @@ const Home = () => (
     </div>
 
     {/* Блоки товаров */}
-    <div>
-      <div className={styles.block4}>
+    <div className={styles.block4}>
+      {/* <div className={styles.block4Text}>
         <h4 className={styles.blockTitle}>Ассортимент</h4>
         <h2 className={styles.blockMainTitle}>ПОПУЛЯРНЫЕ ТОВАРЫ</h2>
-      </div>
-        <div className={styles.productContainer}>
-        <img className={styles.Back} src="/arrow.svg" alt="Back" />
-        {products.map((product) => (
-          <ProductBlock
-            key={product.id}
-            image={product.image}
-            title={product.name}
-            description={product.description}
-            price={product.price}
-          />
-        ))}
-        <img className={styles.Next} src="/arrow.svg" alt="Next" />
-      </div>
-      {/*  */}
-      
+      </div> */}
+      <ProductSlider />
     </div>
   </div>
 );

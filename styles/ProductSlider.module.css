@@ -1,0 +1,47 @@
+.productSliderContainer {
+    position: relative;
+    top: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.productSlider {
+    display: flex;
+}
+
+/* расположение по бокам */
+.prevButton,
+.nextButton {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Next {
+    transform: rotate(-180deg);
+}
+
+.prevButton {
+    left: 40px;
+}
+
+.nextButton {
+    right: 40px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .nextButton {
+        right: -60px;
+    }
+
+    .prevButton {
+        left: -60px;
+    }
+}

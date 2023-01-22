@@ -14,7 +14,6 @@ const Navbar = () => {
 
   return (
     <div className={styles.menuContainer}>
-
       {/* Поиск */}
       <div className={styles.left}>
         <div
@@ -52,7 +51,7 @@ const Navbar = () => {
       {menuOpen && (
         <div className={styles.menuOverlay}>
           <div className={styles.menuContent}>
-            <a href="/a">
+            <a href="/hookahs">
               <div className={styles.menuItem}>Кальяны</div>
             </a>
             <a href="/a">
@@ -73,12 +72,12 @@ const Navbar = () => {
           <Image src="/language.svg" width={30} height={30} alt="Search" />
         </div>
         {/* Переход на другие страницы */}
-        <a href="/my-account">
+        <a href="/">
           <div className={styles.icons}>
             <Image src="/accaunt.svg" width={25} height={30} alt="Accaunt" />
           </div>
         </a>
-        <a href="/shopcart/products">
+        <a href="/shopcart">
           <div className={styles.icons}>
             <Image src="/my-basket.svg" width={25} height={25} alt="Shopcart" />
           </div>

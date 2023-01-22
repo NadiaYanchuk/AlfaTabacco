@@ -1,6 +1,6 @@
 .wrapper {
   min-height: 100%;
-  height: 2300px;
+  height: 2150px;
 }
 
 .container {
@@ -166,16 +166,18 @@
 
 .block4 {
   position: relative;
-  top: 200px;
-  text-align: left;
-  margin-left: 10%;
 }
+/* 
+.block4Text {
+  position: relative;
+  top: 200px;
+} */
 
 
 /* Media Queries */
 @media (max-width: 768px) {
   .wrapper {
-    height: 3900px;
+    height: 2550px;
   }
   /* Главный экран */
   .content {
@@ -204,11 +206,14 @@
   .block3Text {
     width: 80%;
   }
-  /*  */
+  /* Четвертый блок. С товарами*/
   .block4 { 
-    transform: translate(3%, -90%);
+    transform: translate(25%, -20%);
     width: 80%;
     text-align: left;
+  }
+  .block4Text {
+    transform: translate(-55%, 0%);
   }
 }
 

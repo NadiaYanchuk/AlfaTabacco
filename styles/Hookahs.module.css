@@ -1,0 +1,91 @@
+.productBlockWrapper {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.productBlockContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.pageNumbers {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* .prevButton,
+.nextButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.pageNumberButton {
+    margin: 0 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Критерии */
+.searchAndSortContainer {
+    display: flex;
+    align-items: center;
+    background-color: #e9e9e9;
+    padding: 10px;
+    }
+    
+    .searchContainer {
+    display: flex;
+    align-items: center;
+    }
+    
+    .searchIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    }
+    
+    .searchInput {
+    border: none;
+    outline: none;
+    background-color: #e9e9e9;
+    padding: 5px;
+    }
+    
+    .sortContainer {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    }
+    
+    .sortText {
+    margin-right: 10px;
+    }
+    
+    .sortIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    }
+    
+    .sortSelect {
+    border: none;
+    outline: none;
+    background-color: #e9e9e9;
+    padding: 5px;
+    }
+
+@media (max-width: Xpx) {
+    .productBlockWrapper {
+        width: 100%;
+    }
+}
