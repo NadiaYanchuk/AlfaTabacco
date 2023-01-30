@@ -72,11 +72,11 @@ const Navbar = () => {
           <Image src="/language.svg" width={30} height={30} alt="Search" />
         </div>
         {/* Переход на другие страницы */}
-        <a href="/">
+        {/* <a href="/">
           <div className={styles.icons}>
             <Image src="/accaunt.svg" width={25} height={30} alt="Accaunt" />
           </div>
-        </a>
+        </a> */}
         <a href="/shopcart">
           <div className={styles.icons}>
             <Image src="/my-basket.svg" width={25} height={25} alt="Shopcart" />

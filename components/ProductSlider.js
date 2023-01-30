@@ -18,17 +18,31 @@ const products = [
 const ProductSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [width, setWidth] = useState(null);
+  const [blockCount, setBlockCount] = useState(3);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+  }, []);
+
+  useEffect(() => {
+    if (width <= 768) {
+      setBlockCount(1);
+    } else {
+      setBlockCount(3);
+    }
+  }, [width]);
 
   const handlePrevClick = () => {
     if (currentIndex === 0) {
-      setCurrentIndex(products.length - 3);
+      setCurrentIndex(products.length - blockCount);
     } else {
       setCurrentIndex(currentIndex - 1);
     }
   };
 
   const handleNextClick = () => {
-    if (currentIndex === products.length - 3) {
+    if (currentIndex === products.length - blockCount) {
       setCurrentIndex(0);
     } else {
       setCurrentIndex(currentIndex + 1);
@@ -37,13 +51,13 @@ const ProductSlider = () => {
 
   const renderDesktopSlider = () => {
     return (
-      <div>
+      <div className={styles.productSliderContainer}>
         <button onClick={handlePrevClick} className={styles.prevButton}>
-        <img className={styles.Back} src="/arrow.svg" alt="Back" />
+          <img className={styles.Back} src="/arrow.svg" alt="Back" />
         </button>
         <div className={styles.productSlider}>
           {products
-            .slice(currentIndex, currentIndex + 3)
+            .slice(currentIndex, currentIndex + blockCount)
             .map((product, index) => (
               <ProductBlock
                 key={index}
@@ -54,14 +68,15 @@ const ProductSlider = () => {
             ))}
         </div>
         <button onClick={handleNextClick} className={styles.nextButton}>
-        <img className={styles.Next} src="/arrow.svg" alt="Next" />
+          <img className={styles.Next} src="/arrow.svg" alt="Next" />
         </button>
       </div>
     );
   };
+
   const renderMobileSlider = () => {
     return (
-      <div>
+      <div className={styles.productSliderContainer}>
         <button onClick={handlePrevClick} className={styles.prevButton}>
           <img className={styles.Back} src="/arrow.svg" alt="Back" />
         </button>
@@ -73,22 +88,13 @@ const ProductSlider = () => {
           />
         </div>
         <button onClick={handleNextClick} className={styles.nextButton}>
-        <img className={styles.Next} src="/arrow.svg" alt="Next" />
+          <img className={styles.Next} src="/arrow.svg" alt="Next" />
         </button>
       </div>
     );
   };
-  useEffect(() => {
-    setWidth(window.innerWidth);
-    window.addEventListener("resize", () => setWidth(window.innerWidth));
-  }, []);
 
-  return (
-    <div className={styles.productSliderContainer}>
-      {width > 600 ? renderDesktopSlider() : renderMobileSlider()}
-    </div>
-  );
-
-
+  return width <= 768 ? renderMobileSlider() : renderDesktopSlider();
 };
+
 export default ProductSlider;

@@ -1,10 +1,8 @@
 .productSliderContainer {
     position: relative;
     top: 200px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
+    margin-left: 120px;
+    margin-right: auto;
 }
 
 .productSlider {
@@ -28,7 +26,7 @@
 }
 
 .prevButton {
-    left: 40px;
+    left: -70px;
 }
 
 .nextButton {
@@ -37,6 +35,10 @@
 
 /* Media Queries */
 @media (max-width: 768px) {
+    .productSliderContainer {
+        top: 200px;
+        margin-left: 0;
+    }    
     .nextButton {
         right: -60px;
     }
