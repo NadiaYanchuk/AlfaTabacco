@@ -13,30 +13,33 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <>
       {!showPage && (
         <div className={styles.overlay}>
           <div className={styles.message}>
             <p>Вам уже исполнилось 18 лет?</p>
             <div className={styles.buttons}>
               <button className={styles.buttonNo}>Нет</button>
-              <button className={styles.buttonYes} onClick={handleShowPage}>Да</button>
+              <button className={styles.buttonYes} onClick={handleShowPage}>
+                Да
+              </button>
             </div>
           </div>
         </div>
       )}
+
       {showPage && (
         <div>
-          {
-            // Главная страница
+          <Head>
+            <title>Home</title>
+          </Head>
+
+          {/* Меню */}
+          <Header />
+
+          {/* Главная страница*/}
+          <div className={styles.mainContainer}>
             <div className={styles.wrapper}>
-              <Head>
-                <title>Home</title>
-              </Head>
-
-              {/* Меню */}
-              <Header />
-
               {/* Главный экран */}
               <div className={styles.container}>
                 <img
@@ -53,6 +56,7 @@ const Home = () => {
                   <button className={styles.button}>Ассортимент</button>
                 </div>
               </div>
+
               {/* Бренды */}
               <div className={styles.block2}>
                 <h4 className={styles.blockTitle}>С кем мы работаем?</h4>
@@ -62,6 +66,7 @@ const Home = () => {
                   <img src="/brand.svg" alt="Brand 3" />
                 </div>
               </div>
+
               {/* О нас */}
               <div className={styles.block3}>
                 <img src="/about.png" alt="About Us" />
@@ -78,22 +83,22 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-
-              {/* Блоки товаров */}
-              <div className={styles.block4}>
-                {/* <div className={styles.block4Text}>
-        <h4 className={styles.blockTitle}>Ассортимент</h4>
-        <h2 className={styles.blockMainTitle}>ПОПУЛЯРНЫЕ ТОВАРЫ</h2>
-      </div> */}
-                <ProductSlider />
-              </div>
             </div>
-          }
+            {/* Блоки товаров */}
+            <div className={styles.block4}>
+              {/* <div className={styles.block4Text}>
+              <h4 className={styles.blockTitle}>Ассортимент</h4>
+              <h2 className={styles.blockMainTitle}>ПОПУЛЯРНЫЕ ТОВАРЫ</h2>
+              </div> */}
+              <ProductSlider />
+            </div>
+          </div>
+
           {/* Футер */}
           <Footer />
         </div>
       )}
-    </div>
+    </>
   );
 };
 

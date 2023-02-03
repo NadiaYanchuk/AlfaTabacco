@@ -28,6 +28,8 @@ const ProductSlider = () => {
   useEffect(() => {
     if (width <= 768) {
       setBlockCount(1);
+    } else if (width <= 1024) {
+      setBlockCount(2);
     } else {
       setBlockCount(3);
     }
@@ -56,16 +58,9 @@ const ProductSlider = () => {
           <img className={styles.Back} src="/arrow.svg" alt="Back" />
         </button>
         <div className={styles.productSlider}>
-          {products
-            .slice(currentIndex, currentIndex + blockCount)
-            .map((product, index) => (
-              <ProductBlock
-                key={index}
-                image={product.image}
-                title={product.name}
-                price={product.price}
-              />
-            ))}
+          {products.slice(currentIndex, currentIndex + blockCount).map((product, index) => (
+            <ProductBlock key={index} image={product.image} title={product.name} price={product.price} />
+          ))}
         </div>
         <button onClick={handleNextClick} className={styles.nextButton}>
           <img className={styles.Next} src="/arrow.svg" alt="Next" />
@@ -81,11 +76,7 @@ const ProductSlider = () => {
           <img className={styles.Back} src="/arrow.svg" alt="Back" />
         </button>
         <div className={styles.productSlider}>
-          <ProductBlock
-            image={products[currentIndex].image}
-            title={products[currentIndex].name}
-            price={products[currentIndex].price}
-          />
+          <ProductBlock image={products[currentIndex].image} title={products[currentIndex].name} price={products[currentIndex].price} />
         </div>
         <button onClick={handleNextClick} className={styles.nextButton}>
           <img className={styles.Next} src="/arrow.svg" alt="Next" />

@@ -6,9 +6,11 @@ const ProductBlock = ({ image, title, price }) => {
       <img src={image} className={styles.productImage} alt="Product" />
       <h3 className={styles.productTitle}>{title}</h3>
       <p className={styles.productPrice}>{price}</p>
-      <div>
+      <div className={styles.buttonWrapper}>
         <button className={styles.productButtonDetails}>Подробнее</button>
-        <button className={styles.productBasket}><img className={styles.basket} src="/basket.svg" alt="Basket" /></button>
+        <button className={styles.productBasket}>
+          <img className={styles.basket} src="/basket.svg" alt="Basket" />
+        </button>
       </div>
     </div>
   );

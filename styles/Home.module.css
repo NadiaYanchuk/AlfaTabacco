@@ -30,7 +30,7 @@
   line-height: 49px;
 }
 
-.overlay  button {
+.overlay button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -50,17 +50,32 @@
   width: 100px;
 }
 
-
 /* Основная страница */
+.mainContainer {
+  min-height: 100%;
+  width: 90vw;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
 .wrapper {
   min-height: 100%;
-  height: 2150px;
+  width: 80vw;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .container {
-  position: relative;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Главный экран */
@@ -73,36 +88,31 @@
   object-fit: cover;
   z-index: -1;
   filter: blur(0.4rem);
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .content {
-  position: absolute;
-  top: 50%;
-  left: 15%;
-  transform: translate(-15%, -60%);
   text-align: left;
   color: white;
-  margin-left: 40px;
 }
 
 .title {
-  font-family: 'Outfit';
+  font-family: "Outfit";
   font-style: normal;
   font-size: 4.6rem;
   margin-bottom: 1rem;
-  width: 514px;
+  max-width: 514px;
   line-height: 101%;
 }
 
 .description {
   font-size: 1.3rem;
   margin-bottom: 2rem;
-  width: 422px;
+  max-width: 422px;
 }
 
 .button {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 600;
   color: #000235;
   font-size: 1.2rem;
@@ -111,23 +121,23 @@
   width: 236px;
   height: 60px;
   top: 575px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 83px;
   cursor: pointer;
   text-transform: uppercase;
 }
 
 .blockTitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 300;
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #A8B2D1;
+  color: #a8b2d1;
   text-transform: uppercase;
 }
 
 .blockMainTitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 2.2rem;
   margin-bottom: 1rem;
   margin-top: -5px;
@@ -138,28 +148,20 @@
 /* Второй блок "С кем мы работаем" */
 .block2 {
   position: relative;
-  padding: 2rem;
-  width: 70%;
-  left: 25%;
-  transform: translate(-20%, 15%);
 }
 
 .brandImages {
+  width: 100%;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
+  padding-block: 2rem;
   background-color: #383956;
-  height: 98px;
   border-radius: 11px;
-
 }
 
 .brandImages img {
-  position: relative;
-  width: 20%;
-  margin-right: 2rem;
-  transform: translate(20%, 0);
+  height: 100%;
 }
 
 /* Третий блок "О нас" */
@@ -168,15 +170,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  top: 100px;
+  gap: 2rem;
 }
 
 .block3 img {
-  width: 40%;
+  width: 50%;
   max-width: 400px;
-  margin-right: 2rem;
-  width: 523px;
+  max-width: 523px;
 }
 
 .block3 .block {
@@ -189,7 +189,6 @@
   margin-bottom: 1rem;
   width: 80%;
 }
-
 
 /*Товары*/
 .productContainer {
@@ -213,90 +212,70 @@
 .block4 {
   position: relative;
 }
-/* 
-.block4Text {
-  position: relative;
-  top: 200px;
-} */
 
 
 /* Media Queries */
 @media (max-width: 768px) {
   .container {
-    width: 120%;
+    width: 100%;
   }
-  .wrapper {
-    height: 2550px;
-  }
+
   /* Главный экран */
   .content {
-    transform: translate(-13%, -50%);
+    margin-inline: 1rem;
   }
+
+  .title {
+    font-size: 3.25rem;
+  }
+
   .description {
-    width: 320px;
+    max-width: 320px;
   }
-  /* Второй блок "С кем мы работаем" */
-  .block2 {
-    width: 98%;
-    left: 0;
-    transform: translate(0);
-    }
+
+  .brandImages {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   /* Третий блок "О нас" */
+  .block3 {
+    flex-direction: column;
+  }
+
   .block3 img {
     width: 100%;
     margin-bottom: 1rem;
-    transform: translate(12%, -20%);
   }
+
   .block3 .block {
-    transform: translate(11%, -25%);
+    max-width: 100%;
   }
+
   .block3Text {
-    width: 80%;
-  }
-  /* Четвертый блок. С товарами*/
-  .block4 { 
-    width: 90%;
-    text-align: left;
-    margin-left: 60px;
-    margin-top: -100px;
+    width: 100%;
   }
 }
-
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
     width: 100%;
   }
-  .wrapper {
-    height: 2700px;
-  }
-  /* Главный экран */
-  .content {
-    transform: translate(0%, -70%);
-  }
-
-  /* Второй блок "С кем мы работаем" */
-  .block2 {
-    width: 90%;
-    left: 0;
-    transform: translate(0);
-    }
 
   /* Третий блок "О нас" */
+  .block3 {
+    flex-direction: column;
+  }
+
   .block3 img {
     width: 100%;
-    margin-bottom: 1rem;
-    transform: translate(12%, -20%);
   }
+
   .block3 .block {
-    transform: translate(11%, -25%);
+    max-width: 100%;
   }
+
   .block3Text {
-    width: 80%;
-  }
-  /* Четвертый блок. С товарами*/
-  .block4 { 
-    margin-top: -90px;
-    margin-left: -60px;
+    width: 100%;
   }
 }

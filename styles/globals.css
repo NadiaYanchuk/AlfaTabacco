@@ -1,14 +1,16 @@
-html,
-body {
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: #000235;
   color: #fff;
   font-size: 20px;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 header,
@@ -17,15 +19,10 @@ footer {
 }
 
 header {
-  width: 97.5%;
+  width: 100%;
   position: fixed;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(12, 24, 32),
-    rgba(18, 30, 40, 0.074)
-  );
+  background-image: linear-gradient(to bottom, rgb(12, 24, 32), rgba(18, 30, 40, 0.074));
   display: flex;
   align-items: center;
-  padding: 0 20px;
   z-index: 1;
 }
